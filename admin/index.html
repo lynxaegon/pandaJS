@@ -1,0 +1,59 @@
+<html>
+<head>
+	<!-- Bootstrap v4 -->
+	<script src="assets/js/libs/3rdparty/jquery-3.2.1.slim.min.js"></script>
+	<script src="assets/js/libs/3rdparty/popper.min.js"></script>
+	<script src="assets/js/libs/3rdparty/bootstrap.min.js"></script>
+	<!-- Icons -->
+	<script src="assets/js/libs/3rdparty/feather.min.js"></script>
+	<!-- PandaJS CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<!-- PandaJS JS -->
+	<script src="assets/js/libs/3rdparty/socket.io.js"></script>
+	<script src="assets/js/libs/3rdparty/underscore-1.9.1.min.js"></script>
+	<script src="assets/js/libs/3rdparty/json-formatter.js"></script>
+	<script src="assets/js/libs/utils/class.js"></script>
+	<script src="assets/js/libs/utils/utils.js"></script>
+	<script src="assets/js/panda.admin.js"></script>
+	<script src="assets/js/libs/internals/panda.buffer.js"></script>
+	<script src="assets/js/libs/internals/panda.logger.js"></script>
+	<script src="assets/js/libs/internals/panda.admin.plugin.base.js"></script>
+	<script src="assets/js/plugins/panda.admin.plugin.clientList.js"></script>
+	<script src="assets/js/plugins/panda.admin.plugin.ajax_console.js"></script>
+	<script src="assets/js/plugins/panda.admin.plugin.ajaxProxy.js"></script>
+	<script src="assets/js/plugins/panda.admin.plugin.consoleProxy.js"></script>
+	<script>
+		PandaJS.Utils.onReady(function(){
+			new PandaJS.AdminClient();
+			feather.replace();
+		});
+	</script>
+</head>
+<body>
+	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="javascript:;">
+			<img src="assets/images/logo.png">
+			Admin
+		</a>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-3 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-2 mb-1 text-muted">
+						<span>Extensions</span>
+						<a class="d-flex align-items-center text-muted" href="javascript:;">
+							<span data-feather="activity"></span>
+						</a>
+					</h6>
+
+					<ul class="nav flex-column pandajs-plugin-list"></ul>
+				</div>
+			</nav>
+			<main role="main" class="col-md-8 ml-sm-auto col-lg-10 pt-2 px-4 panda-main-container"></main>
+		</div>
+	</div>
+</body>
+</html>
