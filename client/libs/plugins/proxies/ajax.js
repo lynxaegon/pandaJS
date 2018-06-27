@@ -38,7 +38,12 @@ PandaJS.Plugins.AjaxProxy = PandaJS.PluginBase.extend({
 					this.duration = Date.now() - this._started;
 					this.status = pointer.status;
 					this.readyState = pointer.readyState;
-					this.response = pointer.responseText;
+					try {
+						this.response = pointer.responseText;
+					}
+					catch(e){
+						this.response = "<arraybuffer>";
+					}
 					this._isDirty = true;
 					self.pushData();
 				}
