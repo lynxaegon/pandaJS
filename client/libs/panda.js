@@ -52,6 +52,8 @@ PandaJS.Client = PandaJS.BaseClass.extend({
 		return this;
 	},
 	setID: function(id){
+		// force string
+		id += "";
 		this.options.id = id;
 
 		if(this.socket && this.socket.connected){
