@@ -75,7 +75,10 @@ PandaJS.Client = PandaJS.BaseClass.extend({
 	_connect: function(){
 		var self = this;
 		// connect to socket.io
-		self.socket = io(self._connectionString);
+		self.socket = io(self._connectionString, {
+			transports: ['websocket'],
+			upgrade: false
+		});
 		self.socket.on('connect', function(data){
 			self.socket.emit("/master/setup", {
 				guid: self.options.id,
